@@ -1040,20 +1040,38 @@
         
         function getIconForLabel(name) {
             const lower = name.toLowerCase();
-            if (lower.includes('comunitaria') || lower.includes('robo')) return 'ph-shield-warning';
+            
+            // Emergencias Críticas
+            if (lower.includes('comunitaria')) return 'ph-shield-check';
             if (lower.includes('incendio') || lower.includes('fuego')) return 'ph-fire';
-            if (lower.includes('sospechosa')) return 'ph-eye';
-            if (lower.includes('mascota')) return 'ph-dog';
-            if (lower.includes('basura')) return 'ph-trash';
-            if (lower.includes('médica') || lower.includes('enfermería')) return 'ph-first-aid-kit';
-            if (lower.includes('mujer')) return 'ph-woman';
-            if (lower.includes('vehículo') || lower.includes('parquear')) return 'ph-car';
+            if (lower.includes('médica') || lower.includes('enfermería') || lower.includes('médico')) return 'ph-first-aid-kit';
+            if (lower.includes('mujer') || lower.includes('acoso')) return 'ph-hand-palm';
+            if (lower.includes('sospechoso') || lower.includes('sospechosa')) return 'ph-eye-closed';
+            if (lower.includes('robo')) return 'ph-mask-happy';
+            
+            // Convivencia y Ciudadanía
+            if (lower.includes('mascota') || lower.includes('animal')) return 'ph-dog';
+            if (lower.includes('basura') || lower.includes('camión')) return 'ph-trash';
+            if (lower.includes('ruido') || lower.includes('bulling') || lower.includes('discutir')) return 'ph-megaphone';
+            if (lower.includes('parquear')) return 'ph-no-parking';
+            if (lower.includes('puerta')) return 'ph-door';
+            if (lower.includes('psicoactivas') || lower.includes('nocivas')) return 'ph-pill';
+            if (lower.includes('perdido')) return 'ph-package';
+            
+            // Eventos Naturales
+            if (lower.includes('inundación') || lower.includes('tormenta')) return 'ph-cloud-rain';
+            if (lower.includes('sismico')) return 'ph-waves';
+            if (lower.includes('derrumbe')) return 'ph-mountains';
+            
+            // Informativos y Otros
             if (lower.includes('simulacro')) return 'ph-speaker-hifi';
             if (lower.includes('evacuación')) return 'ph-door-open';
-            if (lower.includes('ruido')) return 'ph-speaker-low';
-            if (lower.includes('animal')) return 'ph-paw-print';
-            if (lower.includes('agua') || lower.includes('inundación')) return 'ph-drop';
-            if (lower.includes('sismico')) return 'ph-waves';
+            if (lower.includes('horario') || lower.includes('cerrar')) return 'ph-clock';
+            if (lower.includes('policia')) return 'ph-police-car';
+            if (lower.includes('pausa')) return 'ph-timer';
+            if (lower.includes('vecinal')) return 'ph-chat-centered-dots';
+            if (lower.includes('biodivers')) return 'ph-leaf';
+            
             return 'ph-warning-circle';
         }
 
