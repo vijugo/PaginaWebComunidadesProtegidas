@@ -895,6 +895,11 @@
                             <td class="check">Batería de Respaldo Incluida</td>
                         </tr>
                         <tr>
+                            <td><strong>Gestión Municipal</strong></td>
+                            <td class="cross">Ninguna</td>
+                            <td class="check">Centro de Monitoreo y Data Analytics</td>
+                        </tr>
+                        <tr>
                             <td><strong>Multimedia</strong></td>
                             <td class="cross">No disponible</td>
                             <td class="check">Fotos, Audios y Perifoneo</td>
@@ -955,6 +960,13 @@
                         <div>
                             <strong>Hardware de Grado Industrial</strong><br>
                             <span style="color: var(--text-muted); font-size: 0.9rem;">Caja certificada para intemperie y batería de respaldo interna. El sistema sigue funcionando incluso si hay un corte de luz en la zona.</span>
+                        </div>
+                    </li>
+                    <li style="display: flex; gap: 15px;">
+                        <i class="ph-fill ph-chart-pie" style="color: #6366f1; font-size: 24px;"></i>
+                        <div>
+                            <strong>Inteligencia de Datos Municipal</strong><br>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Plataforma centralizada para alcaldías y juntas. Recopila data en tiempo real para crear planes de acción preventivos y mejorar la percepción de seguridad.</span>
                         </div>
                     </li>
                 </ul>
@@ -1489,9 +1501,9 @@
                 const q = question.toLowerCase();
 
                 if (q.includes('funciona')) {
-                    answer = "Nuestro sistema es potencia pura: utiliza un amplificador de **400W** con dos cornetas industriales de alto impacto. Además, no se detiene nunca, ya que cuenta con **batería de respaldo** y caja protegida para lluvia y sol.";
+                    answer = "Nuestro sistema no solo suena, también **informa**. Cada alerta se concentra en nuestra **Plataforma de Monitoreo Central**, permitiendo que las autoridades (Alcaldías o Juntas) vean patrones, tomen acciones correctivas y creen planes de seguridad basados en datos reales.";
                 } else if (q.includes('incluye')) {
-                    answer = "El paquete incluye: El cerebro electrónico con triple conexión, amplificador de 400W, 2 cornetas de 100W, batería de respaldo, caja para intemperie y el Plan Anual para 200 usuarios.";
+                    answer = "El paquete incluye: El cerebro electrónico de triple conexión, 400W de potencia, batería de respaldo y el **Acceso a la Plataforma de Inteligencia** para monitoreo centralizado y gestión de datos municipales.";
                 } else if (q.includes('elegir') || q.includes('electroalarmas')) {
                     answer = "En **ELECTROALARMAS** ofrecemos flexibilidad total: el equipo puede usar su propia SIM de datos incluida, o conectarse por **Wi-Fi/Ethernet** si el cliente lo prefiere. Además, protegemos hasta 200 vecinos con un solo equipo, bajando el costo por familia drásticamente.";
                 } else if (q.includes('cotizar') || q.includes('cotizo')) {
