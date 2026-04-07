@@ -356,10 +356,10 @@
             font-size: 24px;
             padding: 12px;
             border-radius: 12px;
-            color: white; /* Todos los iconos en blanco */
+            color: white !important; /* Fuerza todos los iconos a blanco */
         }
-        .btn-emergencia.rojo i { background: #ef4444; } /* Fondo rojo sólido para contraste con blanco */
-        .btn-emergencia.naranja i { background: #f59e0b; } /* Fondo naranja sólido */
+        .btn-emergencia.rojo i { background: #ef4444; } 
+        .btn-emergencia.naranja i { background: #f59e0b; } 
         .btn-emergencia.gris i { background: rgba(255, 255, 255, 0.2); }
 
         /* Timer de alerta */
@@ -1170,8 +1170,8 @@
                                 <h4 style="color: white; margin: 0; font-size: 14px;">Emergencias</h4>
                                 <p style="color: #666; font-size: 11px; margin: 0;">Cuadra Central</p>
                             </div>
-                            <button onclick="stopAudio()" style="background: rgba(239, 68, 68, 0.15); border: 1px solid var(--danger); color: var(--danger); padding: 5px 10px; border-radius: 8px; font-size: 10px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 4px;">
-                                <i class="ph ph-stop"></i> DETENER
+                            <button onclick="stopAudio()" style="background: var(--danger); border: none; color: white; padding: 6px 14px; border-radius: 20px; font-size: 11px; cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);">
+                                <i class="ph-fill ph-stop-circle"></i> DETENER
                             </button>
                         </div>
                     </div>
@@ -1592,9 +1592,7 @@
         }
 
         function getColorClass(name) {
-            const lower = name.toLowerCase();
-            if (lower.includes('comunitaria') || lower.includes('médica') || lower.includes('riesgo')) return 'rojo';
-            if (lower.includes('incendio') || lower.includes('sospechosa') || lower.includes('acoso')) return 'naranja';
+            // Unificamos todo a un estilo neutral para que los iconos resalten en blanco
             return 'gris';
         }
 
