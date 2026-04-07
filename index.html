@@ -835,24 +835,35 @@
     <section class="section">
         <div class="container">
             <div class="section-header reveal">
-                <h2>¿Qué es exactamente? 🤔</h2>
-                <p>Es un sistema de alarma inteligente con altavoces potentes instalados en tu calle, permanentemente conectado a los celulares de todos los vecinos.</p>
+                <h2>Elige tu Nivel de Protección 🛡️</h2>
+                <p>Ofrecemos dos soluciones estratégicas según la necesidad de tu barrio o conjunto.</p>
             </div>
             
             <div class="grid-2">
-                <div class="card reveal" style="transition-delay: 0.1s">
+                <!-- MODELO DISUASIVO -->
+                <div class="card reveal" style="border-top: 4px solid var(--primary);">
                     <div class="icon-box"><i class="ph ph-megaphone"></i></div>
-                    <h3>Poder Disuasivo (400W)</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Equipado con un amplificador de 400W y 2 cornetas de 100W cada una, genera un sonido envolvente capaz de alertar a toda la comunidad y ahuyentar intrusos al instante.</p>
+                    <h3>Esquema Disuasivo (Físico)</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Potencia total con amplificador de 400W y cornetas. Ideal para <strong>barrios abiertos y zonas de riesgo</strong> donde se requiere espantar intrusos físicamente.</p>
+                    <ul style="font-size: 11px; color: var(--success); list-style: none; margin-top: 15px; padding: 0;">
+                        <li><i class="ph ph-check"></i> Hardware de Alta Potencia</li>
+                        <li><i class="ph ph-check"></i> Batería de Respaldo</li>
+                    </ul>
                 </div>
-                <div class="card reveal" style="transition-delay: 0.2s">
-                    <div class="icon-box"><i class="ph ph-users-three"></i></div>
-                    <h3>Comunidad Conectada</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Mantiene al barrio alerta y comunicado ante cualquier evento de emergencia o convivencia directa a través de sus propios smartphones.</p>
+                
+                <!-- MODELO VIRTUAL -->
+                <div class="card reveal" style="border-top: 4px solid #6366f1; transition-delay: 0.1s;">
+                    <div class="icon-box" style="background: rgba(99, 102, 241, 0.1); color: #6366f1;"><i class="ph ph-cloud-check"></i></div>
+                    <h3>Alerta Virtual (100% Nube)</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Enfocado en la <strong>comunicación vecinal y coordinación</strong>. Ideal para conjuntos cerrados o edificios donde ya hay seguridad física. <strong>$0 Inversión en Hardware</strong>.</p>
+                    <ul style="font-size: 11px; color: #6366f1; list-style: none; margin-top: 15px; padding: 0;">
+                        <li><i class="ph ph-check"></i> Sin Instalación Física</li>
+                        <li><i class="ph ph-check"></i> Gestión de Datos y GPS</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- TABLA COMPARATIVA -->
+            <!-- TABLA COMPARATIVA ACTUALIZADA -->
             <div class="comp-table-container reveal" style="margin-top: 5rem;">
                 <h3 style="text-align: center; margin-bottom: 2rem;">¿Por qué somos diferentes?</h3>
                 <table class="comp-table">
@@ -877,7 +888,12 @@
                         <tr>
                             <td><strong>Mantenimiento</strong></td>
                             <td class="cross">Mensualidades costosas</td>
-                            <td class="check">Plan Anual (Incluye Datos y App)</td>
+                            <td class="check">Plan Anual (Misma tarifa)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardware</strong></td>
+                            <td class="cross">Equipos Propios</td>
+                            <td class="check">Físico (400W) o $0 (Virtual)</td>
                         </tr>
                         <tr>
                             <td><strong>Usuarios</strong></td>
@@ -1501,13 +1517,15 @@
                 const q = question.toLowerCase();
 
                 if (q.includes('funciona')) {
-                    answer = "Nuestro sistema no solo suena, también **informa**. Cada alerta se concentra en nuestra **Plataforma de Monitoreo Central**, permitiendo que las autoridades (Alcaldías o Juntas) vean patrones, tomen acciones correctivas y creen planes de seguridad basados en datos reales.";
+                    answer = "Ofrecemos dos modalidades: **Disuasiva** (con amplificador de 400W y cornetas para espantar intrusos) y **Virtual** (100% nube, sin hardware, para conjuntos seguros). Ambas se gestionan desde nuestra App y reportan al centro de monitoreo.";
                 } else if (q.includes('incluye')) {
-                    answer = "El paquete incluye: El cerebro electrónico de triple conexión, 400W de potencia, batería de respaldo y el **Acceso a la Plataforma de Inteligencia** para monitoreo centralizado y gestión de datos municipales.";
+                    answer = "Depende del modelo: El **Disuasivo** incluye el amplificador, cornetas y batería. La **Virtual** no requiere hardware físico. Ambas incluyen el Plan Anual para 200 usuarios y acceso a la plataforma de inteligencia de datos.";
+                } else if (q.includes('virtual') || q.includes('nube')) {
+                    answer = "Nuestra **Alerta Virtual** es ideal para sitios que no quieren ruido. Es 100% nube, no compras equipos físicos ni cables. Pagas la misma anualidad y tienes toda la potencia de comunicación, GPS y monitoreo de nuestro sistema.";
                 } else if (q.includes('elegir') || q.includes('electroalarmas')) {
-                    answer = "En **ELECTROALARMAS** ofrecemos flexibilidad total: el equipo puede usar su propia SIM de datos incluida, o conectarse por **Wi-Fi/Ethernet** si el cliente lo prefiere. Además, protegemos hasta 200 vecinos con un solo equipo, bajando el costo por familia drásticamente.";
+                    answer = "En **ELECTROALARMAS** te damos la flexibilidad total. Si tu barrio es abierto, te recomendamos el modelo **Físico/Disuasivo**. Si vives en un conjunto cerrado o edificio, nuestro modelo **Virtual 100% Nube** es perfecto para ti.";
                 } else if (q.includes('cotizar') || q.includes('cotizo')) {
-                    answer = "¡Excelente! Para darte el valor del equipo y la anualidad (que ya incluye el respaldo de datos por un año y acceso para 200 vecinos), pulsa el botón de WhatsApp abajo y te asesoramos.";
+                    answer = "¡Excelente! Ya sea que busques el esquema **Disuasivo** o la **Alerta Virtual $0 Hardware**, pulsa el botón de WhatsApp abajo y uno de nuestros expertos te guiará según tu necesidad.";
                 } else {
                     answer = "Entiendo. En **ELECTROALARMAS** nos tomamos muy en serio tu seguridad. Si tienes una consulta técnica específica, lo mejor es que hables directamente con un asesor por WhatsApp aquí abajo.";
                 }
