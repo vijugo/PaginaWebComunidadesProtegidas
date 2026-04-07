@@ -636,6 +636,22 @@
         .faq-item.active .faq-answer { padding-bottom: 1.2rem; max-height: 200px; }
         .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--primary); }
 
+        /* Logo Principal */
+        .main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 32px;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: logoIn 0.8s forwards cubic-bezier(0.16, 1, 0.3, 1);
+            clip-path: inset(4px round 32px);
+            background: transparent;
+        }
+        @keyframes logoIn { to { opacity: 1; transform: scale(1); } }
+
         /* Responsive */
         @media (max-width: 991px) {
             .grid-2 { grid-template-columns: 1fr; }
