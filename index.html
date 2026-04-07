@@ -628,6 +628,15 @@
             100% { transform: scale(1); opacity: 0; }
         }
 
+        /* FAQ Accordion */
+        .faq-container { margin-top: 3rem; max-width: 800px; margin-inline: auto; }
+        .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { padding: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        .faq-question:hover { background: rgba(225, 29, 72, 0.05); }
+        .faq-answer { padding: 0 1.2rem; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+        .faq-item.active .faq-answer { padding-bottom: 1.2rem; max-height: 200px; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--primary); }
+
         /* Responsive */
         @media (max-width: 768px) {
             .grid-2 { grid-template-columns: 1fr; }
@@ -1155,6 +1164,73 @@
         </div>
     </section>
 
+    <!-- SECCIÓN FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Preguntas Frecuentes ❓</h2>
+                <p>Todo lo que necesitas saber antes de empezar.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item reveal">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Qué pasa si se va el fluido eléctrico?
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No te preocupes. El sistema cuenta con una **batería de respaldo interna** que mantiene el equipo funcionando por varias horas, garantizando protección continua.
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.1s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Cuántos vecinos pueden estar conectados?
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Un solo equipo tiene capacidad para hasta **200 usuarios** registrados en la aplicación. Si tu comunidad es más grande, se pueden instalar equipos adicionales.
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.2s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Qué diferencia hay entre el modelo físico y el virtual?
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        El **Físico** incluye amplificador (400W) y cornetas para disuasión sonora. El **Virtual** es 100% nube ($0 hardware), ideal para conjuntos con seguridad privada que solo necesitan la App y monitoreo.
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.3s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Cómo se conecta el equipo a Internet?
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Es híbrido. Puede conectarse por cable **Ethernet**, mediante **Wi-Fi** de un vecino, o usar su propio **Módem Celular (SIM 4G)** incluido en el plan.
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.4s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Tengo que pagar mensualidades eternas?
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Manejamos un **Plan Anual** muy económico que cubre el mantenimiento de la plataforma, el acceso para 200 usuarios y los datos ilimitados de la SIM card.
+                    </div>
+                </div>
+                <div class="faq-item reveal" style="transition-delay: 0.5s">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Puedo reportar sospechosos sin activar la sirena?
+                        <i class="ph ph-caret-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sí. El sistema permite **notificaciones silenciosas o mensajes de voz** (perifoneo) que se activan solo en los celulares o desde los altavoces según tú decidas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECCIÓN VENTAS -->
     <section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
         <div class="container text-center reveal">
@@ -1575,6 +1651,19 @@
             const statsBar = document.querySelector('.stats-bar');
             if(statsBar) statsObserver.observe(statsBar);
         });
+
+        // Lógica de FAQ
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Cerrar otros
+            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+            
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
     </script>
 </body>
 </html>
