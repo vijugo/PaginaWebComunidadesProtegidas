@@ -842,8 +842,8 @@
             <div class="grid-2">
                 <div class="card reveal" style="transition-delay: 0.1s">
                     <div class="icon-box"><i class="ph ph-megaphone"></i></div>
-                    <h3>Poder Disuasivo</h3>
-                    <p style="color: var(--text-muted); margin-top: 10px;">Su misión principal es espantar a posibles delincuentes con mensajes y sirenas envolventes de altísima potencia que alertan a todo el vecindario.</p>
+                    <h3>Poder Disuasivo (400W)</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px;">Equipado con un amplificador de 400W y 2 cornetas de 100W cada una, genera un sonido envolvente capaz de alertar a toda la comunidad y ahuyentar intrusos al instante.</p>
                 </div>
                 <div class="card reveal" style="transition-delay: 0.2s">
                     <div class="icon-box"><i class="ph ph-users-three"></i></div>
@@ -883,6 +883,16 @@
                             <td><strong>Usuarios</strong></td>
                             <td class="cross">Limitado o Pago extra</td>
                             <td class="check">Hasta 200 usuarios por equipo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Potencia de Audio</strong></td>
+                            <td class="cross">Sirena estándar</td>
+                            <td class="check">400W (Amplificador + 2 Cornetas)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Respaldo de Luz</strong></td>
+                            <td class="cross">Se apaga sin luz</td>
+                            <td class="check">Batería de Respaldo Incluida</td>
                         </tr>
                         <tr>
                             <td><strong>Multimedia</strong></td>
@@ -938,6 +948,13 @@
                                     <i class="ph ph-cell-signal-high"></i> Módem 4G
                                 </div>
                             </div>
+                        </div>
+                    </li>
+                    <li style="display: flex; gap: 15px;">
+                        <i class="ph-fill ph-shield-check" style="color: var(--success); font-size: 24px;"></i>
+                        <div>
+                            <strong>Hardware de Grado Industrial</strong><br>
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Caja certificada para intemperie y batería de respaldo interna. El sistema sigue funcionando incluso si hay un corte de luz en la zona.</span>
                         </div>
                     </li>
                 </ul>
@@ -1472,9 +1489,9 @@
                 const q = question.toLowerCase();
 
                 if (q.includes('funciona')) {
-                    answer = "Nuestro sistema es híbrido y redundante: se conecta mediante **Wi-Fi, Ethernet o Módem Celular (SIM 4G)**. Esto garantiza que la alerta salga en < 6 segundos aunque falle el internet de la casa. ¡Es seguridad profesional!";
+                    answer = "Nuestro sistema es potencia pura: utiliza un amplificador de **400W** con dos cornetas industriales de alto impacto. Además, no se detiene nunca, ya que cuenta con **batería de respaldo** y caja protegida para lluvia y sol.";
                 } else if (q.includes('incluye')) {
-                    answer = "El paquete incluye: El cerebro electrónico con triple conexión, altavoces de gran potencia, y un **Plan Anual** que te da acceso ilimitado a la App para hasta **200 usuarios** y una **SIM card de datos** ya configurada por un año.";
+                    answer = "El paquete incluye: El cerebro electrónico con triple conexión, amplificador de 400W, 2 cornetas de 100W, batería de respaldo, caja para intemperie y el Plan Anual para 200 usuarios.";
                 } else if (q.includes('elegir') || q.includes('electroalarmas')) {
                     answer = "En **ELECTROALARMAS** ofrecemos flexibilidad total: el equipo puede usar su propia SIM de datos incluida, o conectarse por **Wi-Fi/Ethernet** si el cliente lo prefiere. Además, protegemos hasta 200 vecinos con un solo equipo, bajando el costo por familia drásticamente.";
                 } else if (q.includes('cotizar') || q.includes('cotizo')) {
