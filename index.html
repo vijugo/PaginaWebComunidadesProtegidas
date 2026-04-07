@@ -637,10 +637,80 @@
         .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--primary); }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 991px) {
             .grid-2 { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-            .app-mockup { margin-bottom: 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .main-logo { width: 100px; height: 100px; }
+            
+            /* Responsive Table to Cards - ENFORCED */
+            .comp-table, .comp-table thead, .comp-table tbody, .comp-table th, .comp-table td, .comp-table tr { 
+                display: block !important; 
+                width: 100% !important;
+            }
+            .comp-table thead tr { 
+                position: absolute !important; 
+                top: -9999px !important; 
+                left: -9999px !important; 
+            }
+            .comp-table tr { 
+                margin-bottom: 2rem !important; 
+                border: 1px solid var(--border) !important; 
+                border-radius: 16px !important; 
+                overflow: hidden !important; 
+                background: var(--surface) !important; 
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; 
+            }
+            .comp-table td { 
+                border: none !important; 
+                position: relative !important; 
+                padding-left: 50% !important; 
+                padding-top: 15px !important;
+                padding-bottom: 15px !important;
+                text-align: right !important; 
+                border-bottom: 1px solid var(--border) !important; 
+                min-height: 50px;
+            }
+            .comp-table td:before { 
+                content: attr(data-label);
+                position: absolute !important; 
+                top: 50% !important; 
+                left: 15px !important; 
+                width: 45% !important; 
+                transform: translateY(-50%) !important; 
+                text-align: left !important; 
+                font-weight: 700 !important; 
+                font-size: 11px !important; 
+                color: var(--text-muted) !important; 
+                text-transform: uppercase !important; 
+            }
+            
+            /* Data Labels via CSS if data-label not present, but better use data-label in HTML */
+            .comp-table td:nth-of-type(1) { 
+                background: rgba(225, 29, 72, 0.05) !important; 
+                text-align: center !important; 
+                padding: 1.2rem !important; 
+                font-weight: 800 !important; 
+                color: var(--primary) !important; 
+                font-size: 16px !important; 
+                border-bottom: 2px solid var(--primary-glow) !important; 
+                padding-left: 1.2rem !important;
+            }
+            .comp-table td:nth-of-type(1):before { content: "" !important; }
+            
+            .comp-table td:nth-of-type(2):before { content: "Tradicional" !important; }
+            .comp-table td:nth-of-type(3):before { content: "Propuesta" !important; }
+            
+            .comp-table td:nth-of-type(3) { 
+                background: rgba(16, 185, 129, 0.05) !important; 
+                color: var(--success) !important; 
+                font-weight: 700 !important; 
+                border-bottom: none !important; 
+            }
+            
+            /* Sales Section Mobile */
+            .card-ventas { grid-template-columns: 1fr !important; }
+            .card-ventas > div { border-right: none !important; border-bottom: 1px solid var(--border) !important; padding-bottom: 20px !important; }
         }
     </style>
 </head>
@@ -858,22 +928,7 @@
         <div class="container">
             <!-- LOGO OFICIAL ORIGINAL -->
             <img src="assets/logo.png" alt="Logo Comunidades Protegidas" class="main-logo">
-            <style>
-                .main-logo {
-                    width: 140px;
-                    height: 140px;
-                    border-radius: 32px;
-                    object-fit: cover; /* Asegura que la imagen llene el espacio */
-                    margin-bottom: 2rem;
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                    opacity: 0;
-                    transform: scale(0.8);
-                    animation: logoIn 0.8s forwards cubic-bezier(0.16, 1, 0.3, 1);
-                    clip-path: inset(4px round 32px); /* Recorte más agresivo para eliminar bordes blancos */
-                    background: transparent;
-                }
-                @keyframes logoIn { to { opacity: 1; transform: scale(1); } }
-            </style>
+
             
             <div class="badges" style="margin-bottom: 30px;">
                 <a href="https://apps.apple.com/co/app/comunidades-protegidas/id6484273572" target="_blank" class="btn-store">
@@ -1315,7 +1370,7 @@
             <h2 class="gradient-text" style="font-size: 2.2rem; margin-bottom: 15px;">¿Listo para proteger tu cuadra?</h2>
             <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">Adquiere el sistema oficial <strong>ELECTROALARMAS</strong> u obtén soporte directo.</p>
             
-            <div class="card" style="max-width: 900px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; align-items: center; border: 1px solid var(--primary-glow);">
+            <div class="card card-ventas" style="max-width: 900px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; align-items: center; border: 1px solid var(--primary-glow);">
                 <!-- Col 1: Contacto -->
                 <div style="border-right: 1px solid var(--border); padding-right: 20px;">
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
@@ -1388,10 +1443,7 @@
                 .wa-icon-container {
                     width: 45px; height: 45px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: #dc2626; margin-bottom: 5px;
                 }
-                @media (max-width: 768px) {
-                    .card { grid-template-columns: 1fr; }
-                    .card > div { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 15px 0; }
-                }
+
             </style>
         </div>
     </section>
