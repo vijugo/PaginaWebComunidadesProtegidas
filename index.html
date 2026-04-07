@@ -974,7 +974,7 @@
                 <p>Municipios</p>
             </div>
             <div class="stat-item reveal" style="transition-delay: 0.2s">
-                <h2>&lt; 6 s</h2>
+                <h2>&lt; <span class="counter" data-target="6">0</span> s</h2>
                 <p>Tiempo de Respuesta</p>
             </div>
             <div class="stat-item reveal" style="transition-delay: 0.3s">
@@ -1644,39 +1644,7 @@
         }
 
         // Contador Animado
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200;
 
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute('data-target');
-                    const count = +counter.innerText;
-                    const inc = target / speed;
-
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-                updateCount();
-            });
-        }
-
-        // Observer para contadores
-        const observerOptions = { threshold: 0.2 };
-        const statsSection = document.querySelector('.stats-bar');
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    animateCounters();
-                    counterObserver.unobserve(statsSection);
-                }
-            });
-        }, observerOptions);
-        if(statsSection) counterObserver.observe(statsSection);
 
         // Simulación envío de alerta
         function triggerAlert(alertName = "Alerta", audioId = null) {
@@ -1819,23 +1787,7 @@
             chatBody.scrollTop = chatBody.scrollHeight;
         }
 
-        // Contador Animado
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const speed = 200;
-                const inc = target / speed;
 
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 1);
-                } else {
-                    counter.innerText = target.toLocaleString();
-                }
-            });
-        }
 
         // Cargar preferencia al inicio
         window.addEventListener('DOMContentLoaded', () => {
@@ -1845,13 +1797,33 @@
                 updateThemeIcon(true);
             }
 
-            // Iniciar contadores cuando sean visibles
+            // Iniciar contadores (Animación Fluida a 60fps)
+            function startCounters() {
+                const counters = document.querySelectorAll('.counter');
+                const duration = 2000; // Todos terminan en 2 segundos
+
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const startTime = performance.now();
+
+                    const update = (now) => {
+                        const elapsed = Math.min((now - startTime) / duration, 1);
+                        const current = Math.floor(elapsed * target);
+                        counter.innerText = current.toLocaleString();
+                        
+                        if (elapsed < 1) requestAnimationFrame(update);
+                        else counter.innerText = target.toLocaleString();
+                    };
+                    requestAnimationFrame(update);
+                });
+            }
+
             const statsObserver = new IntersectionObserver((entries) => {
                 if(entries[0].isIntersecting) {
-                    animateCounters();
+                    startCounters();
                     statsObserver.disconnect();
                 }
-            }, { threshold: 0.5 });
+            }, { threshold: 0.2 });
             
             const statsBar = document.querySelector('.stats-bar');
             if(statsBar) statsObserver.observe(statsBar);
