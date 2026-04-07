@@ -657,6 +657,9 @@
                 <span style="font-weight: 800; font-family: 'Outfit';">COMUNIDADES PROTEGIDAS</span>
             </div>
             <div class="nav-actions">
+                <button onclick="toggleChat()" class="nav-btn" title="Asistente Virtual" style="margin-right: 10px; color: var(--primary);">
+                    <i class="ph ph-robot"></i>
+                </button>
                 <div class="theme-switch-wrapper" onclick="toggleTheme()">
                     <span class="theme-label" id="themeLabel">Modo Noche</span>
                     <button class="nav-btn" title="Cambiar Tema">
@@ -765,8 +768,14 @@
             cursor: pointer;
             box-shadow: 0 10px 30px rgba(225, 29, 72, 0.4);
             transition: all 0.3s;
+            animation: fabPulse 2s infinite;
         }
-        .chat-fab:hover { transform: scale(1.1) rotate(5deg); }
+        @keyframes fabPulse {
+            0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(225, 29, 72, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }
+        }
+        .chat-fab:hover { transform: scale(1.1) rotate(5deg); animation-play-state: paused; }
         .chat-badge {
             position: absolute;
             top: 2px;
@@ -1667,9 +1676,15 @@
                 if (q.includes('funciona')) {
                     answer = "A diferencia de las alarmas viejas que dependen de un control remoto con poco alcance, nuestro sistema se activa **desde cualquier parte del mundo** a través de tu celular. Solo necesitas internet y podrás proteger tu hogar así estés de viaje.";
                 } else if (q.includes('incluye')) {
-                    answer = "El paquete incluye: El cerebro electrónico de triple conexión, 400W de potencia y batería. El Plan Anual cubre el acceso para 200 usuarios y un plan de **datos limitados** para la SIM card opcional.";
+                    answer = "El paquete incluye: El cerebro electrónico de triple conexión (Wi-Fi/Ethernet/4G), 400W de potencia y batería. El Plan Anual cubre acceso para **200 usuarios** y un plan de datos limitados para la SIM card opcional.";
+                } else if (q.includes('usuario') || q.includes('cantidad') || q.includes('personas')) {
+                    answer = "El sistema base soporta **200 usuarios**. Si tu comunidad es más grande, podemos expandir la capacidad por un valor adicional dependiendo del número total de vecinos.";
+                } else if (q.includes('sim') || q.includes('datos') || q.includes('internet')) {
+                    answer = "El sistema es híbrido. Puede usar el Wi-Fi del vecino o conectarse por Ethernet. Si no hay internet cerca, ofrecemos una **SIM card opcional** con un plan de datos limitado muy económico.";
+                } else if (q.includes('monitoreo') || q.includes('plataforma')) {
+                    answer = "Contamos con una plataforma de monitoreo profesional donde se centralizan todas las alertas. Esto permite a los municipios crear planes de acción basados en datos reales de seguridad.";
                 } else if (q.includes('amenaza') || q.includes('amenazado') || q.includes('silenciosa')) {
-                    answer = "Por seguridad total, si alguien te amenaza y activas la alerta, **tu celular no emitirá sonido** (activación sigilosa para el usuario), aunque la sirena de la calle sí sonará para pedir ayuda y disuadir.";
+                    answer = "Por seguridad total, si activas la alerta bajo amenaza, **tu celular no emitirá sonido**. La alerta llegará al centro de monitoreo y sonará en la calle para disuadir, protegiendo tu integridad física.";
                 } else if (q.includes('virtual') || q.includes('nube')) {
                     answer = "Nuestra **Alerta Virtual** es ideal para sitios seguros. Es 100% nube, sin hardware. Tienes toda la potencia de la App para coordinar a los vecinos desde cualquier lugar del mundo.";
                 } else if (q.includes('elegir') || q.includes('electroalarmas')) {
