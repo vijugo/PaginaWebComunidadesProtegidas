@@ -884,6 +884,11 @@
                             <td class="cross">No disponible</td>
                             <td class="check">Fotos, Audios y Perifoneo</td>
                         </tr>
+                        <tr>
+                            <td><strong>Conectividad</strong></td>
+                            <td class="cross">Solo RTC / Limitada</td>
+                            <td class="check">Wi-Fi + Ethernet + Módem 4G</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -911,6 +916,23 @@
                         <div>
                             <strong>Respuesta < 6 Segundos</strong><br>
                             <span style="color: var(--text-muted); font-size: 0.9rem;">Tocas el botón y en segundos el poste de la calle empieza a sonar. ¡Interactivo! Prueba presionar el botón rojo en el teléfono de al lado.</span>
+                        </div>
+                    </li>
+                    <li style="display: flex; gap: 15px;">
+                        <i class="ph-fill ph-globe" style="color: var(--primary); font-size: 24px;"></i>
+                        <div>
+                            <strong>Conectividad Triple Híbrida</strong><br>
+                            <div style="display: flex; gap: 10px; margin-top: 8px;">
+                                <div style="display: flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 20px; font-size: 11px;">
+                                    <i class="ph ph-wifi-high"></i> Wi-Fi
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 20px; font-size: 11px;">
+                                    <i class="ph ph-unite"></i> Ethernet
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 20px; font-size: 11px;">
+                                    <i class="ph ph-cell-signal-high"></i> Módem 4G
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -1436,9 +1458,9 @@
                 const q = question.toLowerCase();
 
                 if (q.includes('funciona')) {
-                    answer = "Nuestro sistema conecta tu smartphone con altavoces de alta potencia en tiempo real. En menos de 6 segundos, toda la cuadra recibe la alerta, ubicación y foto de quien genera la emergencia. ¡Es disuasión inmediata!";
+                    answer = "Nuestro sistema es híbrido y redundante: se conecta mediante **Wi-Fi, Ethernet o Módem Celular (SIM 4G)**. Esto garantiza que la alerta salga en < 6 segundos aunque falle el internet de la casa. ¡Es seguridad profesional!";
                 } else if (q.includes('incluye')) {
-                    answer = "El paquete es integral: Aplicación móvil para todos los vecinos, el sistema físico de altavoz de alta potencia, comunicación multimedia privada y soporte técnico especializado para la instalación.";
+                    answer = "El paquete es integral: Aplicación móvil ilimitada, altavoces de alta potencia, sistema de perifoneo y el **cerebro con triple conectividad** listo para instalar.";
                 } else if (q.includes('elegir') || q.includes('electroalarmas')) {
                     answer = "En **ELECTROALARMAS** tenemos años de experiencia protegiendo hogares. No solo vendemos tecnología, vendemos tranquilidad. Estamos ubicados físicamente en Sogamoso para brindarte un respaldo real y garantizado.";
                 } else if (q.includes('cotizar') || q.includes('cotizo')) {
