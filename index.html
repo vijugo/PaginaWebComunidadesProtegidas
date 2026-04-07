@@ -1257,7 +1257,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        No te preocupes. El sistema cuenta con una **batería de respaldo interna** que mantiene el equipo funcionando por varias horas, garantizando protección continua.
+                        No te preocupes. El sistema cuenta con una <strong>batería de respaldo interna</strong> que mantiene el equipo funcionando por varias horas, garantizando protección continua.
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.1s">
@@ -1266,7 +1266,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        El sistema incluye una **base para 200 usuarios**. No necesitas controles remotos físicos de corto alcance; todos los vecinos autorizados pueden activar la alarma desde su celular a través de Internet, sin importar si están en casa o en otra ciudad.
+                        El sistema incluye una <strong>base para 200 usuarios</strong>. No necesitas controles remotos físicos de corto alcance; todos los vecinos autorizados pueden activar la alarma desde su celular a través de Internet, sin importar si están en casa o en otra ciudad.
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.2s">
@@ -1275,7 +1275,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        El **Físico** incluye amplificador (400W) y cornetas para disuasión sonora. El **Virtual** es 100% nube ($0 hardware), ideal para conjuntos con seguridad privada que solo necesitan la App y monitoreo.
+                        El <strong>Físico</strong> incluye amplificador (400W) y cornetas para disuasión sonora. El <strong>Virtual</strong> es 100% nube ($0 hardware), ideal para conjuntos con seguridad privada que solo necesitan la App y monitoreo.
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.3s">
@@ -1284,7 +1284,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Es híbrido. Puede conectarse por cable **Ethernet** o **Wi-Fi**. El servicio de **Módem Celular (SIM card)** es opcional; ofrecemos un plan de datos limitado diseñado para emergencias.
+                        Es híbrido. Puede conectarse por cable <strong>Ethernet</strong> o <strong>Wi-Fi</strong>. El servicio de <strong>Módem Celular (SIM card)</strong> es opcional; ofrecemos un plan de datos limitado diseñado para emergencias.
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.4s">
@@ -1293,7 +1293,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Manejamos un **Plan Anual** muy económico que cubre el mantenimiento de la plataforma, el acceso para 200 usuarios y el servicio de **datos limitados** de la SIM card (opcional).
+                        Manejamos un <strong>Plan Anual</strong> muy económico que cubre el mantenimiento de la plataforma, el acceso para 200 usuarios y el servicio de <strong>datos limitados</strong> de la SIM card (opcional).
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.5s">
@@ -1302,7 +1302,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        El sistema siempre activa la sirena pública para disuasión inmediata. Sin embargo, si un usuario se encuentra amenazado y genera la alerta, **en su celular no se genera ningún mensaje de audio** para no poner en riesgo su vida frente al agresor.
+                        El sistema siempre activa la sirena pública para disuasión inmediata. Sin embargo, si un usuario se encuentra amenazado y genera la alerta, <strong>en su celular no se genera ningún mensaje de audio</strong> para no poner en riesgo su vida frente al agresor.
                     </div>
                 </div>
             </div>
@@ -1695,7 +1695,8 @@
                     answer = "Entiendo. En **ELECTROALARMAS** nos tomamos muy en serio tu seguridad. Si tienes una consulta técnica específica, lo mejor es que hables directamente con un asesor por WhatsApp aquí abajo.";
                 }
                 
-                botMsg.innerHTML = answer;
+                // Convertir Markdown simple a HTML bold
+                botMsg.innerHTML = answer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
                 chatBody.appendChild(botMsg);
                 chatBody.scrollTop = chatBody.scrollHeight;
             }, 600);
