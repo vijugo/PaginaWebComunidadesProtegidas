@@ -31,16 +31,16 @@
         }
 
         body.light-mode {
-            --bg-color: #fcfcfd;
+            --bg-color: #f8fafc;
             --surface: #ffffff;
             --surface-light: #f1f5f9;
             --primary: #e11d48;
-            --primary-glow: rgba(225, 29, 72, 0.1);
+            --primary-glow: rgba(225, 29, 72, 0.08);
             --secondary: #fb7185;
             --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border: rgba(0, 0, 0, 0.08);
-            --glow-opacity: 0.3;
+            --text-muted: #475569;
+            --border: rgba(0, 0, 0, 0.06);
+            --glow-opacity: 0.4;
         }
 
         * {
@@ -55,7 +55,7 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
-            transition: background-color 0.4s, color 0.4s;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         h1, h2, h3, h4 {
@@ -657,9 +657,12 @@
                 <span style="font-weight: 800; font-family: 'Outfit';">COMUNIDADES PROTEGIDAS</span>
             </div>
             <div class="nav-actions">
-                <button onclick="toggleTheme()" class="nav-btn" title="Cambiar Tema">
-                    <i id="themeIcon" class="ph ph-moon-stars"></i>
-                </button>
+                <div class="theme-switch-wrapper" onclick="toggleTheme()">
+                    <span class="theme-label" id="themeLabel">Modo Noche</span>
+                    <button class="nav-btn" title="Cambiar Tema">
+                        <i id="themeIcon" class="ph ph-moon-stars"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -720,7 +723,30 @@
         .nav-btn:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-2px);
+            transform: scale(1.05);
+        }
+
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            padding: 5px 5px 5px 15px;
+            background: var(--surface-light);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .theme-switch-wrapper:hover {
+            border-color: var(--primary);
+            background: var(--surface);
+        }
+        .theme-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
         }
 
         .chat-fab {
@@ -1603,10 +1629,13 @@
 
         function updateThemeIcon(isLight) {
             const icon = document.getElementById('themeIcon');
+            const label = document.getElementById('themeLabel');
             if (isLight) {
                 icon.className = 'ph ph-sun';
+                if(label) label.innerText = 'Modo Día';
             } else {
                 icon.className = 'ph ph-moon-stars';
+                if(label) label.innerText = 'Modo Noche';
             }
         }
 
