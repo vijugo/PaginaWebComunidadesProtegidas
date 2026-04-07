@@ -545,7 +545,6 @@
         /* Testimonial Chats */
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
         .wa-testimonial { background: #e7f3f0; border-radius: 15px; padding: 15px; border-left: 5px solid #25d366; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 10px; }
-        body.light-mode { }
         body.light-mode .wa-testimonial { background: #f0fdf4; }
         .wa-testimonial strong { color: #075e54; font-size: 14px; }
         .wa-testimonial p { color: #111; font-size: 13px; margin-top: 5px; line-height: 1.4; }
@@ -907,7 +906,7 @@
                         <tr>
                             <td><strong>Usuarios</strong></td>
                             <td class="cross">Limitado o Pago extra</td>
-                            <td class="check">Hasta 200 usuarios por equipo</td>
+                            <td class="check">Base 200 (Expandible por valor extra)</td>
                         </tr>
                         <tr>
                             <td><strong>Potencia de Audio</strong></td>
@@ -1188,7 +1187,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Un solo equipo tiene capacidad para hasta **200 usuarios** registrados en la aplicación. Si tu comunidad es más grande, se pueden instalar equipos adicionales.
+                        El sistema incluye una **base para 200 usuarios**. Si tu comunidad supera esta cifra, se puede ampliar la capacidad por un valor adicional dependiendo del número exacto de vecinos.
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.2s">
@@ -1206,7 +1205,7 @@
                         <i class="ph ph-caret-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Es híbrido. Puede conectarse por cable **Ethernet**, mediante **Wi-Fi** de un vecino, o usar su propio **Módem Celular (SIM 4G)** incluido en el plan.
+                        Es híbrido. Puede conectarse por cable **Ethernet** o **Wi-Fi**. El servicio de **Módem Celular (SIM card)** es opcional; ofrecemos un plan de datos limitado diseñado para emergencias.
                     </div>
                 </div>
                 <div class="faq-item reveal" style="transition-delay: 0.4s">
@@ -1593,15 +1592,15 @@
                 const q = question.toLowerCase();
 
                 if (q.includes('funciona')) {
-                    answer = "Ofrecemos dos modalidades: **Disuasiva** (con amplificador de 400W y cornetas para espantar intrusos) y **Virtual** (100% nube, sin hardware, para conjuntos seguros). Ambas se gestionan desde nuestra App y reportan al centro de monitoreo.";
+                    answer = "Ofrecemos dos modalidades: **Disuasiva** (con potencia física) y **Virtual** (100% nube). Ambas se conectan por Wi-Fi o Ethernet, y opcionalmente por **SIM Card** con un plan de datos limitado para emergencias. ¡Seguridad a tu medida!";
                 } else if (q.includes('incluye')) {
-                    answer = "Depende del modelo: El **Disuasivo** incluye el amplificador, cornetas y batería. La **Virtual** no requiere hardware físico. Ambas incluyen el Plan Anual para 200 usuarios y acceso a la plataforma de inteligencia de datos.";
+                    answer = "Depende del modelo: El **Disuasivo** incluye amplificador de 400W y cornetas. Ambos incluyen acceso a la App para una **base de 200 usuarios** (expandible por valor adicional) y la plataforma de monitoreo.";
                 } else if (q.includes('virtual') || q.includes('nube')) {
-                    answer = "Nuestra **Alerta Virtual** es ideal para sitios que no quieren ruido. Es 100% nube, no compras equipos físicos ni cables. Pagas la misma anualidad y tienes toda la potencia de comunicación, GPS y monitoreo de nuestro sistema.";
+                    answer = "Nuestra **Alerta Virtual** es ideal para sitios seguros. Es 100% nube, sin hardware. Cubre una base de 200 usuarios y tienes toda la potencia de coordinación y GPS de nuestro ecosistema.";
                 } else if (q.includes('elegir') || q.includes('electroalarmas')) {
-                    answer = "En **ELECTROALARMAS** te damos la flexibilidad total. Si tu barrio es abierto, te recomendamos el modelo **Físico/Disuasivo**. Si vives en un conjunto cerrado o edificio, nuestro modelo **Virtual 100% Nube** es perfecto para ti.";
+                    answer = "En **ELECTROALARMAS** te damos opciones reales: puedes usar nuestra SIM opcional con plan limitado o conectar el equipo a tu propio Wi-Fi. Protegemos comunidades desde 20 hasta cientos de vecinos (con costo extra por expansión).";
                 } else if (q.includes('cotizar') || q.includes('cotizo')) {
-                    answer = "¡Excelente! Ya sea que busques el esquema **Disuasivo** o la **Alerta Virtual $0 Hardware**, pulsa el botón de WhatsApp abajo y uno de nuestros expertos te guiará según tu necesidad.";
+                    answer = "¡Excelente! Para darte el valor exacto según la cantidad de usuarios (si superan los 200) y configurar el servicio de SIM opcional, pulsa el botón de WhatsApp abajo.";
                 } else {
                     answer = "Entiendo. En **ELECTROALARMAS** nos tomamos muy en serio tu seguridad. Si tienes una consulta técnica específica, lo mejor es que hables directamente con un asesor por WhatsApp aquí abajo.";
                 }
